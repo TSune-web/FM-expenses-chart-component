@@ -1,0 +1,22 @@
+@use "utils";
+
+html {
+  font-family: "DM Sans", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: utils.$cream;
+  font-size: 1.8rem;
+}
+
+.card {
+  border-radius: 1.5rem;
+  padding: 1.5rem 2rem;
+}

@@ -1,0 +1,107 @@
+@use "utils";
+
+main {
+  width: 92%;
+  max-width: 54rem;
+  background-color: utils.$very-pale-orange;
+}
+
+main h2 {
+  margin-bottom: 4rem;
+  padding-top: 1.5rem;
+  font-size: 2.4rem;
+}
+
+.spending-container {
+  display: flex;
+  text-align: center;
+  height: 30vh;
+  margin: 3rem 0 2rem;
+  column-gap: 0.9rem;
+
+  .barContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+
+    .bar {
+      position: relative;
+      background-color: utils.$soft-red;
+      border-radius: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: hsl(10, 79%, 70%);
+      }
+
+      &:hover::before {
+        content: attr(data-barStat);
+        width: auto;
+        font-weight: utils.$font-lg;
+        font-size: 0.7em;
+        color: utils.$cream;
+        padding: 0.6em 0.7em 0.6em 0.7em;
+        background-color: utils.$dark-brown;
+        border-radius: 5px;
+        position: absolute;
+        top: -4.5rem;
+        left: -0.15rem;
+      }
+    }
+    .turquiose {
+      background-color: hsl(186, 34%, 60%);
+
+      &:hover {
+        background-color: hsl(186, 40%, 70%);
+      }
+    }
+  }
+
+  .day {
+    text-align: center;
+    width: 100%;
+    margin-top: 1.5rem;
+    font-size: 0.7em;
+    color: utils.$medium-brown;
+  }
+}
+
+.total {
+  padding-top: 2.5rem;
+  border-top: 2px solid utils.$cream;
+
+  h3 {
+    color: utils.$medium-brown;
+    font-weight: utils.$font-md;
+    font-size: 1.5rem;
+  }
+}
+
+.total__amount {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.total__amount p:first-child {
+  color: utils.$dark-brown;
+  font-weight: utils.$font-lg;
+  font-size: 3rem;
+}
+
+.total__amount__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total__amount__right span:first-child {
+  font-weight: utils.$font-lg;
+  font-size: 1.6rem;
+}
+
+.total__amount__right span:nth-child(2) {
+  color: utils.$medium-brown;
+  font-size: 1.5rem;
+}

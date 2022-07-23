@@ -1,0 +1,82 @@
+@media screen and (min-width: 768px) {
+  header {
+    margin-top: 1rem;
+
+    .header__left {
+      margin-left: 1.2rem;
+      padding: 1rem 0;
+    }
+
+    .header__left h1 {
+      font-size: 1.8rem;
+    }
+
+    .header__left p {
+      font-size: 3.2rem;
+    }
+
+    .header__right img {
+      width: 110%;
+      padding-top: 0.7rem;
+      padding-right: 2.5rem;
+    }
+  }
+
+  main {
+    margin-top: 1.5rem;
+  }
+
+  main h2 {
+    margin-bottom: 4.5rem;
+    padding-left: 2rem;
+    font-size: 3.2175rem;
+  }
+
+  .spending-container {
+    height: 24vh;
+    margin: 1.5rem 0;
+    padding: 0 1.85rem;
+    column-gap: 1.5rem;
+
+    .barContainer {
+      .bar {
+        width: 94%;
+      }
+    }
+
+    .day {
+      margin-top: 0.5rem;
+      font-size: 0.8em;
+    }
+  }
+
+  .total {
+    width: 92.25%;
+    margin: 3.5rem auto 0;
+    padding: 1.2rem 0 2rem;
+
+    h3 {
+      padding-top: 2rem;
+      font-size: 1.85rem;
+    }
+
+    .total__amount {
+      margin-top: 0;
+
+      p:first-child {
+        font-size: 4.8rem;
+      }
+
+      .total__amount__right {
+        padding-top: 0.5rem;
+        span:first-child {
+          font-size: 1.8rem;
+        }
+
+        span:nth-child(2) {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+}

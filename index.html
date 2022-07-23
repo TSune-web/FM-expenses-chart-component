@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./public/stylesheets/style.css">
+
+  <title>Frontend Mentor | Expenses chart component</title>
+
+</head>
+<body>
+  <header class="card">
+    <div class="header__left">
+      <h1>My balance</h1>
+      <p>$921.48</p>
+    </div>
+    <div class="header__right">
+      <img src="./images/logo.svg" alt="overlapping circles">
+    </div>
+  </header>
+
+  <main class="card">
+    <h2>Spending - Last 7 days</h2>
+    <div class="spending-container" id="spendingContainer"></div>
+
+    <section class="total">
+      <h3>Total this month</h3>
+      <div class="total__amount">
+        <p>$478.33</p>
+        <p class="total__amount__right">
+          <span>+2.4%</span>
+          <span>from last month</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

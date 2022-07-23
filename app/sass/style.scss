@@ -1,0 +1,18 @@
+// @import vs @use
+// both provide mixins, functions, and variables from other Sass stylesheets
+// and combines CSS from multiple stylesheets together. (Modularization)
+
+// @use is recommended as @import is said to be removed from the language entirely. (ref: Sass doc)
+// @import makes all variables, mixins, and functions globally accessible.
+// This makes it very difficult to tell where anything is defined.
+
+// For more details, Sass docs (https://sass-lang.com/documentation/at-rules/import).
+
+
+@use "reset";
+@use "base";
+@use "header";
+@use "main";
+@use "media";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
