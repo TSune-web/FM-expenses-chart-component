@@ -47,7 +47,7 @@ Users should be able to:
 - SASS/SCSS
 - Fetch API
 - Live Server (VS Code extension for development)
-*** My solution with vanilla JS requires this extension to display data from a local JSON file.**
+*** My solution with vanilla JS requires this extension to display data from a local JSON file.***
 
 ### What I learned
 
