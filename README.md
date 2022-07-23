@@ -29,11 +29,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![desktop-expenses-chart-component-with-sass](./solution/desktop-expenses-chart-component-with-sass.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Expenses chart component with Sass](https://tsune-web.github.io/FM-expenses-chart-component-with-Sass/)
 
 ## My process
 
@@ -47,7 +47,7 @@ Users should be able to:
 - SASS/SCSS
 - Fetch API
 - Live Server (VS Code extension for development)
-* My solution with vanilla JS requires this extension to display data from a local JSON file. *
+*** My solution with vanilla JS requires this extension to display data from a local JSON file.**
 
 ### What I learned
 
@@ -59,7 +59,7 @@ Users should be able to:
     - at-rules (@use, @import, etc.)
 
 2. JSON
-    - Use fetch API to read
+    - Use fetch API to read a json file
 
 
 ### Continued development
