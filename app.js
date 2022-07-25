@@ -6,36 +6,50 @@
  *
  */
 
-fetch("data.json")
-  .then((data) => data.json())
-  .then((results) => {
-    const container = document.getElementById("spendingContainer");
+function fetchData() {
+  fetch("data.json")
+    .then((data) => data.json())
+    .then((results) => {
+      const container = document.getElementById("spendingContainer");
 
-    results.forEach((stat) => {
-      // barContainer
-      const barContainer = document.createElement("div");
-      barContainer.classList.add("barContainer");
-      container.appendChild(barContainer);
-
-      // day
-      const day = document.createElement("div");
-      day.classList.add("day");
-      day.innerText = stat.day;
-      barContainer.appendChild(day);
-
-      // bar
-      const bar = document.createElement("div");
-      bar.classList.add("bar");
-      bar.setAttribute("data-barStat", "$" + stat.amount);
-      barContainer.appendChild(bar);
-
-      // styling
-      let barHeight = stat.amount * 1.5;
-      bar.style.height = barHeight + "%";
-
-      if (barHeight > 70) {
-        bar.classList.add("turquiose")
+      let maxAmount = 0;
+      for (const result of results) {
+        if (maxAmount < result.amount) {
+          maxAmount = result.amount;
+        }
       }
-    });
-  })
-  .catch((err) => console.log("Whoops...error occurred: ", err));
+
+      results.forEach((stat) => {
+        // barContainer
+        const barContainer = document.createElement("div");
+        barContainer.classList.add("barContainer");
+        container.appendChild(barContainer);
+
+        // day
+        const day = document.createElement("div");
+        day.classList.add("day");
+        day.innerText = stat.day;
+        barContainer.appendChild(day);
+
+        // bar
+        const bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.setAttribute("data-barStat", "$" + stat.amount);
+        barContainer.appendChild(bar);
+
+        // styling height
+        const fraction = maxAmount / 100;
+        console.log("fraction", fraction)
+        let barHeight = stat.amount / fraction;
+        console.log("barHeight", barHeight)
+        bar.style.height = barHeight + "%";
+
+        if (barHeight > 100) {
+          bar.classList.add("turquiose");
+        }
+      });
+    })
+    .catch((err) => console.log("Whoops...error occurred: ", err));
+}
+
+window.addEventListener("load", fetchData);
