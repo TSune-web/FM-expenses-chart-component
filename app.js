@@ -39,9 +39,7 @@ function fetchData() {
 
         // styling height
         const fraction = maxAmount / 100;
-        console.log("fraction", fraction)
         let barHeight = stat.amount / fraction;
-        console.log("barHeight", barHeight)
         bar.style.height = barHeight + "%";
 
         if (barHeight > 100) {
