@@ -1,6 +1,6 @@
 # Frontend Mentor - Expenses chart component solution
 
-This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt) using SASS/SCSS. Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt) using SASS/SCSS. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -47,25 +47,59 @@ Users should be able to:
 - SASS/SCSS
 - Fetch API
 - Live Server (VS Code extension for development)
-*** My solution with vanilla JS requires this extension to display data from a local JSON file.***
+  **_ My solution with vanilla JS requires this extension to display data from a local JSON file._**
 
 ### What I learned
 
 1. SASS/SCSS basics
-    - Variables
-    - Nesting
-    - Partials
-    - Modules
-    - at-rules (@use, @import, etc.)
+
+   - Variables
+   - Nesting
+   - Partials
+   - Modules
+   - at-rules (@use, @import, etc.)
 
 2. JSON
-    - Use fetch API to read a json file
-
+   - Use fetch API to read a json file
 
 ### Continued development
 
 - Working with JSON files
 - Fetch API
+
+- Adding dynamically changing bar colors based on the current day:
+
+```js
+function renderData() {
+  fetch("data.json")
+    .then((data) => data.json())
+    .then((results) => {
+      // Abbreviation
+
+
+      // After creating all the bar elements
+      function highlightDay() {
+        const d = new Date();
+        const day = d.getDay(); // returns 0(Sun) - 6(Sat)
+        const today = day - 1;
+
+        // fix mismatch of indexes of days
+        // -> mon = today[1-1] or bars[0]
+        // -> sun = today[0-1] or bars[6]
+        let currBar;
+        if (today === -1) {
+          currBar = bars[6];
+        } else {
+          currBar = bars[today];
+        }
+
+        const bars = document.getElementsByClassName("bar");
+        const currBar = bars[today];  // get the current element
+        currBar.classList.add("today"); // add CSS for styling currBar
+      }
+    }
+}
+```
 
 ### Useful resources
 

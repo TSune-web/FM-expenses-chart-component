@@ -6,7 +6,9 @@
  *
  */
 
-function fetchData() {
+window.addEventListener("load", renderData);
+
+function renderData() {
   fetch("data.json")
     .then((data) => data.json())
     .then((results) => {
@@ -20,18 +22,15 @@ function fetchData() {
       }
 
       results.forEach((stat) => {
-        // barContainer
         const barContainer = document.createElement("div");
         barContainer.classList.add("barContainer");
         container.appendChild(barContainer);
 
-        // day
         const day = document.createElement("div");
         day.classList.add("day");
         day.innerText = stat.day;
         barContainer.appendChild(day);
 
-        // bar
         const bar = document.createElement("div");
         bar.classList.add("bar");
         bar.setAttribute("data-barStat", "$" + stat.amount);
@@ -41,13 +40,28 @@ function fetchData() {
         const fraction = maxAmount / 100;
         let barHeight = stat.amount / fraction;
         bar.style.height = barHeight + "%";
-
-        if (barHeight > 100) {
-          bar.classList.add("turquiose");
-        }
       });
+
+      const bars = document.getElementsByClassName("bar");
+      highlightToday(bars);
     })
     .catch((err) => console.log("Whoops...error occurred: ", err));
 }
 
-window.addEventListener("load", fetchData);
+function highlightToday(bars) {
+  const d = new Date();
+  const day = d.getDay(); // returns 0(Sun) - 6(Sat)
+  const today = day - 1;
+
+  // fix mismatch of indexes of days
+  // -> mon = today[1-1] or bars[0]
+  // -> sun = today[0-1] or bars[6]
+  let currBar;
+  if (today === -1) {
+    currBar = bars[6];
+  } else {
+    currBar = bars[today];
+  }
+
+  currBar.classList.add("today");
+}

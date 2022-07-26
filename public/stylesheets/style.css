@@ -114,11 +114,12 @@ main h2 {
   top: -4.5rem;
   left: -0.15rem;
 }
-.spending-container .barContainer .turquiose {
+.spending-container .barContainer .today {
   background-color: hsl(186deg, 34%, 60%);
 }
-.spending-container .barContainer .turquiose:hover {
-  background-color: hsl(186deg, 40%, 70%);
+.spending-container .barContainer .today:hover {
+  background-color: hsl(186deg, 34%, 60%);
+  opacity: 0.8;
 }
 .spending-container .day {
   text-align: center;

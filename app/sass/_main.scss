@@ -49,11 +49,13 @@ main h2 {
         left: -0.15rem;
       }
     }
-    .turquiose {
+    
+    .today {
       background-color: hsl(186, 34%, 60%);
 
       &:hover {
-        background-color: hsl(186, 40%, 70%);
+        background-color: hsl(186, 34%, 60%);
+        opacity: 0.8;
       }
     }
   }
